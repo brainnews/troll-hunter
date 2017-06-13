@@ -1,4 +1,4 @@
-var $recentTweet;
+var kills = 0;
 
 $(function(){
 
@@ -10,24 +10,29 @@ $(function(){
 			if (typeof response.errors === 'undefined' || response.errors.length < 1) {
 				
 				var $tweets = $('<ul></ul>');
+
 				$.each(response, function(i, obj) {
-
-					// this SHOULD look at all of my tweets to see if they are:
-						// 1. Quoted tweets
-						// 2. Have the "quoted_status" key in the JSON object
-
-						// When someone deletes a tweet that you quoted, your tweet retains the "is_quoted_status" key (with value "true") but loses the "quoted_status" key
-
-					if (obj.is_quoted_status == true && obj.hasOwnProperty('quoted_status') == false) {
-						$tweets.append('<li>KILL</li>'); //Will eventually want to count these for the total, but for now, I want to see a list to make sure its getting all of them
+					//Filter out Retweeted tweets
+					if (obj.retweeted == false) {
+						//Check if tweet is a quoted tweet and then check if the quote_status key doesn't exist (the quoted_status key is present if the quoted tweet exists)
+						if (obj.is_quote_status == true && obj.hasOwnProperty('quoted_status') == false) {
+							//increment kill count
+							kills++;
+							//add kills to the <ul>
+							$tweets.append('<li class="kill">Kill: ' + obj.text + '</li>');
+						} else {
+							//add regular tweets to the <ul>
+							$tweets.append('<li>Live: ' + obj.text + '</li>');
+						}
 					}
-					
 					// Uncomment below to show all tweets regardless of "quoted_status" being present
-					// $tweets.append('<li>' + obj + '</li>');
-
+					//$tweets.append('<li>' + obj.text + '</li>');
 				});
 
+				//add tweets to the page
 				$('.tweets-container').html($tweets);
+				//add kill count to the page
+				$('.kill-count').text('Kill count: ' + kills);
 
 			} else {
 				$('.tweets-container p:first').text('Response error');

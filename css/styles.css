@@ -1,0 +1,33 @@
+body {
+	background-color: #222;
+	color: #fff;
+	margin: 0 auto;
+	font-family: 'Helvetica Neue', sans-serif;
+}
+
+.container {
+	padding: 100px;
+}
+
+.kill-count {
+	font-weight: 700;
+	font-size: 24px;
+}
+
+.tweets-container ul {
+	list-style: none;
+	padding: 0px;
+}
+
+.tweets-container li {
+	margin-bottom: 20px;
+}
+
+.kill {
+	color: red;
+	font-weight: 700;
+}
+
+.kill-count {
+	color: red;
+}
