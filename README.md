@@ -1,8 +1,8 @@
-Twitter Proxy
+Troll Hunter
 =============
 
-JavaScript & Object-Oriented PHP example of how to retrieve tweets in JSON format from Twitter's v1.1 API using OAuth.
+A small web app that let's you see how many trolls delete their tweets after you call them out with a quoted tweet. it's like a personal kill count.
 
 Original procedural PHP code by Peter Mortensen (<a href="https://twitter.com/PeterMortensen" target="_blank">@PeterMortensen</a>), adapted by Mike Rogers (<a href="https://twitter.com/mikerogers0" target="_blank">@mikerogers0</a>).
 
-http://parallax.exposecms.com/blog/view/3109/retrieving-tweets-from-the-twitter-v1-1-api-using-oauth-php-javascript
+<a href="http://parallax.exposecms.com/blog/view/3109/retrieving-tweets-from-the-twitter-v1-1-api-using-oauth-php-javascript" target="_blank">Link</a>
