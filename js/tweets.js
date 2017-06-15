@@ -13,7 +13,7 @@ $(function(){
 
 				$.each(response, function(i, obj) {
 					//Filter out Retweeted tweets
-					if (obj.retweeted == false) {
+					if (obj.text.startsWith("RT") == false) {
 						//Check if tweet is a quoted tweet and then check if the quote_status key doesn't exist (the quoted_status key is present if the quoted tweet exists)
 						if (obj.is_quote_status == true && obj.hasOwnProperty('quoted_status') == false) {
 							//increment kill count
@@ -22,7 +22,7 @@ $(function(){
 							$tweets.append('<li class="kill">Kill: ' + obj.text + '</li>');
 						} else {
 							//add regular tweets to the <ul>
-							$tweets.append('<li>Live: ' + obj.text + '</li>');
+							//$tweets.append('<li>' + obj.text + '</li>');
 						}
 					}
 					// Uncomment below to show all tweets regardless of "quoted_status" being present

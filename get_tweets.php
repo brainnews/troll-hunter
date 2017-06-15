@@ -7,9 +7,9 @@ $oauth_access_token = '49634023-JNqy4RZW8FDCz6KG5xfuvameA3GohRF1LkvymqZJN';
 $oauth_access_token_secret = 'yptLQTzS4mUi0JAJzHud0lrrMUgsGGJQLJaAGxSrFIlIY';
 $consumer_key = 'PAWJh6RMzWwc2BEocbsoOhuBI';
 $consumer_secret = 'YMK6MuhOJLQ4ppm9Q0HVREFBc3b0qXV3NYpI7nm0zE4gChszW0';
-$user_id = '49634023';
-$screen_name = '_brainnews';
-$count = 50;
+$user_id = '95975081';
+$screen_name = 'minakimes';
+$count = 3200;
 
 $twitter_url = 'statuses/user_timeline.json';
 $twitter_url .= '?user_id=' . $user_id;
